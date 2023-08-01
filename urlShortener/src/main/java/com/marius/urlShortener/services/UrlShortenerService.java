@@ -1,4 +1,5 @@
 package com.marius.urlShortener.services;
+
 import com.marius.urlShortener.exception.ShortUrlNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -9,10 +10,9 @@ import java.util.Base64;
 @Service
 public class UrlShortenerService {
 
+    private static final String REDIS_KEY_PREFIX = "shorturl:";
     @Autowired
     private RedisTemplate<String, String> redisTemplate;
-
-    private static final String REDIS_KEY_PREFIX = "shorturl:";
 
     public String shortenUrl(String longUrl) {
         String shortUrl = generateShortUrl(longUrl);
