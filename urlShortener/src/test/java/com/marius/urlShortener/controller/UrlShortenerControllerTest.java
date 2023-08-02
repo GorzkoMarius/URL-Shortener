@@ -55,7 +55,7 @@ public class UrlShortenerControllerTest {
 
         when(urlShortenerService.getLongUrl(shortUrl)).thenReturn(longUrl);
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/{shortUrl}", shortUrl))
+        mockMvc.perform(MockMvcRequestBuilders.get("/r/{shortUrl}", shortUrl))
                 .andExpect(status().isFound()); // Should be redirected to long URL
     }
 
