@@ -1,0 +1,10 @@
+
+<form [formGroup]="longUrlFC">
+  <p>
+    <label for="longUrl">Long Url </label>
+    <input type="text" id="longUrl" name="longUrl" formControlName="longUrl"/>
+  </p>
+  <p>
+    <button type="submit" [disabled]="longUrlFC.invalid">Submit</button>
+  </p>
+</form>
