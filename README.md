@@ -41,7 +41,7 @@
 
 ###
 
-<h6 align="left">To run the project you must have installed first:<br>- node<br>- angular cli<br>- java jdk 17+</h6>
+<h6 align="left">To run the project you must have installed first:<br>- redis<br>- node<br>- angular cli<br>- java jdk 17+</h6>
 
 ###
 
