@@ -12,7 +12,21 @@ export class FormComponent {
   longUrlFC = new FormGroup({longUrl: new FormControl("", [
     Validators.required,
     Validators.minLength(10),
-    Validators.maxLength(10000),
+    Validators.maxLength(1000),
     Validators.pattern("^(https?|ftp)://[^\s/$.?#].[^\s]*$")
 ])});
+
+  get url() {
+    return this.longUrlFC.get('longUrl');
+  }
+
+  invalidUrl:boolean = false;
+
+  onSubmit(){
+    if(this.url?.invalid) {
+      this.invalidUrl = true;
+    }  else {
+      //todo submit form
+    }
+  }
 }

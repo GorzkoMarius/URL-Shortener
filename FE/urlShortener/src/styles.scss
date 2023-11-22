@@ -1,1 +1,112 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #f5f6f7
+}
+
+.parentUrl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  gap: 20px;
+}
+
+.display {
+  background-color: #ffffff;
+  width: 800px;
+  max-height: 200px;
+  max-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  border: 3px solid #e8e9eb;
+}
+
+.form {
+  width: 800px;
+  max-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.insideForm {
+  background-color: #ffffff;
+  max-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  border: 3px solid #e8e9eb;
+}
+
+.insideForm p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-text {
+  border: 3px solid #d3d4d7;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 12px 20px;
+  width: 600px;
+  margin-top: 15px;
+
+  font-size: 16px;
+
+  &:focus {
+    outline: none;
+    border-color: #2a5bd7;
+  }
+
+  &::placeholder {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    color: #828396;
+    opacity: 1;
+    text-align: left;
+    text-transform: none;
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+.submit-btn {
+  background-color: #2a5bd7;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+  &:hover {
+    background-color: #0236b9;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+.error {
+  color: #f75248;;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  //position: absolute;
+  left: 20px;
+  bottom: -20px;
+}

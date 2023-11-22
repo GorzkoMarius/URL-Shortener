@@ -1,1 +1,15 @@
-<app-form>
+<div class="parentUrl">
+  <div class="header">
+    <p class="header-m">Shorten a link</p>
+  </div>
+  <div class="form">
+    <app-form></app-form>
+  </div>
+  <div class="display" *ngIf="urlShort.length !== 0">
+    <h2>Shortened URL</h2>
+    <div class="urlCard">
+      <a class="linkClass" href="{{urlShort}}">{{urlShort}}</a>
+      <p>Forwards to: {{urlLong}}</p>
+    </div>
+  </div>
+</div>

@@ -1,10 +1,17 @@
 
-<form [formGroup]="longUrlFC">
-  <p>
-    <label for="longUrl">Long Url </label>
-    <input type="text" id="longUrl" name="longUrl" formControlName="longUrl"/>
-  </p>
-  <p>
-    <button type="submit" [disabled]="longUrlFC.invalid">Submit</button>
-  </p>
-</form>
+    <form class="insideForm" [formGroup]="longUrlFC">
+      <p>
+        <input class="input-text" 
+        type="text" id="longUrl" 
+        name="longUrl" 
+        formControlName="longUrl" 
+        placeholder="Example: http://super-long-link.com/shorten-it"
+        [ngClass]="{'input-error': url?.invalid && url?.touched}"/>
+      </p>
+      <div class="error" *ngIf="url?.invalid && url?.touched">
+        <p>We'll need a valid URL, like "super-long-link.com/shorten-it"</p>
+      </div>
+      <p>
+        <button class="submit-btn" type="submit" [disabled]="longUrlFC.invalid" onclick="onSubmit()">Submit</button>
+      </p>
+    </form>
