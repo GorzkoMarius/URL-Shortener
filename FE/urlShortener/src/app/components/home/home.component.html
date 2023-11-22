@@ -1,15 +1,15 @@
 <div class="parentUrl">
   <div class="header">
-    <p class="header-m">Shorten a link</p>
+    <p class="header-m">Shorten a <span style="color: #2a5bd7;">link</span></p>
   </div>
   <div class="form">
     <app-form></app-form>
   </div>
   <div class="display" *ngIf="urlShort.length !== 0">
-    <h2>Shortened URL</h2>
-    <div class="urlCard">
-      <a class="linkClass" href="{{urlShort}}">{{urlShort}}</a>
-      <p>Forwards to: {{urlLong}}</p>
+    <p class="mini-header">Here is your shortened <span style="color: #ee6123;">URL:</span></p>
+    <div class="url-m">
+      <a class="link-m" href="{{urlShort}}">{{urlShort}}</a>
+      <p class="forward-m">Forwards to: {{urlLong}}</p>
     </div>
   </div>
 </div>
