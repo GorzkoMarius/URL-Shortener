@@ -12,6 +12,6 @@
         <p>We'll need a valid URL, like "super-long-link.com/shorten-it"</p>
       </div>
       <p>
-        <button class="submit-btn" type="submit" [disabled]="longUrlFC.invalid" onclick="onSubmit()">Submit</button>
+        <button class="submit-btn" type="submit" [disabled]="longUrlFC.invalid" (click)="onSubmit()">Submit</button>
       </p>
     </form>

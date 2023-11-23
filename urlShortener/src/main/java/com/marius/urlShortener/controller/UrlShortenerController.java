@@ -1,6 +1,7 @@
 package com.marius.urlShortener.controller;
 
 import com.marius.urlShortener.dto.UrlShortenRequestDTO;
+import com.marius.urlShortener.dto.UrlShortenSendDTO;
 import com.marius.urlShortener.exception.ShortUrlNotFoundException;
 import com.marius.urlShortener.services.UrlShortenerService;
 import jakarta.servlet.http.HttpServletResponse;
@@ -11,23 +12,23 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.io.IOException;
 
+@CrossOrigin("http://localhost:4200")
 @RestController
 public class UrlShortenerController {
 
-    private static final String SHORT_URL_PREFIX = "localhost:8080/r/";
+    private static final String SHORT_URL_PREFIX = "http://localhost:8080/r/";
     @Autowired
     private UrlShortenerService urlShortenerService;
 
+    //@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
     @PostMapping("/shorten")
-    public String shortenUrl(@Valid @RequestBody UrlShortenRequestDTO requestDTO) {
-        return SHORT_URL_PREFIX + urlShortenerService.shortenUrl(requestDTO.getLongUrl());
+    public UrlShortenSendDTO shortenUrl(@Valid @RequestBody UrlShortenRequestDTO requestDTO) {
+        UrlShortenSendDTO url = new UrlShortenSendDTO();
+        url.setShortUrl(SHORT_URL_PREFIX + urlShortenerService.shortenUrl(requestDTO.getLongUrl()));
+        return url;
     }
 
-    @PostMapping(value = "/shorten", consumes = "multipart/form-data")
-    public String shortenUrlFromFormData(@RequestParam("longUrl") @Valid String longUrl) {
-        return SHORT_URL_PREFIX + urlShortenerService.shortenUrl(longUrl);
-    }
-
+    //@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
     @GetMapping("/r/{shortUrl}")
     public void redirectToLongUrl(@PathVariable String shortUrl, HttpServletResponse response) throws IOException {
         try {

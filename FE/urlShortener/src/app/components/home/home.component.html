@@ -3,7 +3,7 @@
     <p class="header-m">Shorten a <span style="color: #2a5bd7;">link</span></p>
   </div>
   <div class="form">
-    <app-form></app-form>
+    <app-form (newShortUrlEvent)="setShortUrl($event)" (newLongUrlEvent)="setLongUrl($event)"></app-form>
   </div>
   <div class="display" *ngIf="urlShort.length !== 0">
     <p class="mini-header">Here is your shortened <span style="color: #ee6123;">URL:</span></p>
